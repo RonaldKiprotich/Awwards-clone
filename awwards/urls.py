@@ -3,6 +3,7 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from django.contrib.auth.views import LoginView, LogoutView 
 
 urlpatterns = [
     path('',views.home,name='home'),
@@ -11,4 +12,5 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('accounts/profile/', views.profile, name='profile'),
     path('updateprofile/', views.updateprofile, name='updateprofile'),
+    path('new-project/', views.postproject, name='newproject'),
 ]

@@ -2,8 +2,19 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from .models import *
+from django.contrib import messages
 
 # Create your views here.
+
+
+@login_required(login_url='/accounts/login/')
+def home(request):
+    projects = Projects.objects.all()
+    context = {
+    "projects":projects,
+    }
+    return render(request, 'index.html', locals())
+
 def registration(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -42,13 +53,6 @@ def profile(request):
     }
     return render(request, 'profile/profile.html', context)
 
-@login_required(login_url='/accounts/login/')
-def home(request):
-    projects = Projects.objects.all()
-    context = {
-    "projects":projects,
-    }
-    return render(request, 'index.html', locals())
 
 @login_required(login_url='/accounts/login/')
 def updateprofile(request):
@@ -74,3 +78,22 @@ def updateprofile(request):
     }
 
     return render(request, 'profile/update_profile.html', context)
+
+
+@login_required(login_url='/accounts/login/')
+def postproject(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.author = current_user
+            project.save()
+        return redirect('/')
+    else:
+        form = ProjectForm()
+    context = {
+        'form':form,
+    }
+    return render(request, 'PostProject.html', context)
+    
