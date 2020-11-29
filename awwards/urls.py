@@ -16,4 +16,6 @@ urlpatterns = [
     path('project/<id>', views.get_project, name='project'),
     path('search/', views.search_projects, name='search_projects'),
     path(r'ratings/', include('star_ratings.urls', namespace='ratings')),
+    path('api/profile/', views.ProfileList.as_view()),
+    path('api/projects/', views.ProjectsList.as_view()),
 ]
