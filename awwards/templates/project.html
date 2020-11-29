@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
-
+{% load ratings %}
     {% block content %}
     <hr class="mt-5">
       <div class="container-fluid">
@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-md-4">
-                  <h1 class="ml-3">Project Title</h1>
+                  <h1 class="ml-3">Poject Title</h1>
                   <hr>
                   <p class="mt-5 ml-5">{{project.title}}<p><br>
                   <h1 class="ml-3">Project Description</h1>
@@ -28,6 +28,11 @@
                   <h4 class="text-info">Posted On: {{project.created_date}}</h4>
 
                 </div>
+                
+                    <div class="col-md">
+                        <h1 >Ratings</h1>
+                            {% ratings project %}
+                    </div>
                 
             </div>
         </div>

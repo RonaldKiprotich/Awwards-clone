@@ -39,6 +39,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'star_ratings',
     'cloudinary',
     'bootstrap4',
     'bootstrap3',
