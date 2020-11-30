@@ -56,7 +56,6 @@ Fork the repo
 ## Known Bugs
 No known bugs.
 
-### LICENSE
-MIT License
-
- Copyright (c) 2020 Ronald Kiprotich
+## License
+* [[License: MIT]](LICENSE.md)
+* Copyright (c) 2020 **Ronald Kiprotich**
