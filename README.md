@@ -44,6 +44,9 @@ You need to have the following installed:
 * Bootstrap
 * Postmman for visual representation while building the api
 
+## Figma Design.
+* https://www.figma.com/file/DD58S3nq4ITQckZksu7kwq/Untitled?node-id=2%3A51
+
 # Development
 It would be so great to have your contributions! Just follow the instructions below.
 Fork the repo
