@@ -60,7 +60,7 @@ Fork the repo
 * Push your changes so we can have a view!
 
 ## Known Bugs
-No known bugs.
+No known bugs so far but if incase you find any, kindly feel free to reach me out on kipray254@gmail.com.
 
 ## License
 * [[License: MIT]](LICENSE.md)
