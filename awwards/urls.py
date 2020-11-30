@@ -16,8 +16,8 @@ urlpatterns = [
     path('project/<id>', views.get_project, name='project'),
     path('search/', views.search_projects, name='search_projects'),
     path(r'ratings/', include('star_ratings.urls', namespace='ratings')),
-    path('api/profile/', views.ProfileList.as_view()),
-    path('api/projects/', views.ProjectsList.as_view()),
+    path('api/profile/', views.ProfileList.as_view(),name='profiles'),
+    path('api/projects/', views.ProjectsList.as_view(),name='projects'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
